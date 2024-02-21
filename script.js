@@ -11,50 +11,29 @@ const btn2 = document.querySelector('.btn2');
 // DATI
 let km;
 const priceXKm = 0.21;
-let prezzoBiglietto = km * priceXKm;
-let scontoMinorenni;
-let scontoSenior;
-
-// if(input3 option.value === '3'){
-//   sconto = prezzoBiglietto * 0.4;
-// }else if(input3.value === '1'){
-//   sconto = prezzoBiglietto * 0.2;
-// }
+let ticketPrice = km * priceXKm;
+let discount;
 
 btn1.addEventListener('click',function(event){
-  // all'interno delle graffe li compie l'azione
   event.preventDefault();
   km = input2.value;
-  prezzoBiglietto = km * priceXKm;
-  scontoMinorenni = prezzoBiglietto * 0.2;
-  scontoSenior = prezzoBiglietto * 0.4;
-  // console.log(prezzoBiglietto);
-  // console.log(scontoMinorenni);
-  // console.log(scontoSenior);
+  ticketPrice = km * priceXKm;
 
-  if(input3.value == 1){
-    prezzoBiglietto = prezzoBiglietto - scontoMinorenni;
-    // console.log(prezzoBiglietto);
-  }else if (input3.value == 3){
-    prezzoBiglietto = prezzoBiglietto - scontoSenior;
+  if(input3.value == 3){
+    discount = ticketPrice * 0.4;
+  }else if(input3.value == 1){
+    discount = ticketPrice * 0.2;
   }
-  console.log(prezzoBiglietto);
+
+  if(input3.value != 2){
+    ticketPrice = ticketPrice - discount;
+  }
+  console.log(ticketPrice);
 })
 
 
-// DATI
 
 
-
-// //1
-// let km = input2.value;
-// console.log(km);
-// //2
-// let etaPasseggero = input3.value
-// console.log (etaPasseggero);
-// //3
-// let prezzoBiglietto = km * 0.21;
-// let sconto = '';
 
 
 // if(etaPasseggero < 18){
