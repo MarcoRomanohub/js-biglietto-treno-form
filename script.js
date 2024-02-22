@@ -14,6 +14,7 @@ const priceXKm = 0.21;
 let ticketPrice = km * priceXKm;
 let discount;
 
+
 btn1.addEventListener('click',function(event){
   event.preventDefault();
   km = input2.value;
@@ -29,6 +30,10 @@ btn1.addEventListener('click',function(event){
     ticketPrice = ticketPrice - discount;
   }
   console.log(ticketPrice);
+
+  output.classList.remove('d-none')
+
+  document.getElementById('outputPrice').innerHTML = ticketPrice.toFixed(2) + '€';
 })
 
 
