@@ -1,0 +1,37 @@
+.dbg{
+  border: 1px solid black;
+}
+
+body{
+  background-color: rgb(183, 23, 55);
+}
+h1{
+  color: white;
+}
+form{
+  background-color: white;
+  width: 90%;
+  height: 300px;
+  border-radius: .6rem;
+}
+#output{
+  width: 100%;
+}
+.ticket{
+  background-color: white;
+  width: 90%;
+  height: 300px;
+  border-radius: .6rem; 
+}
+.your-ticket{
+  width: 95%;
+  height: 250px;
+}
+.details{
+  height: 180px;
+  overflow: hidden;
+}
+.name-passenger{
+  background-color: gray;
+  height: 180px;
+}
