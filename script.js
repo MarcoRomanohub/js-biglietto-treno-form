@@ -9,6 +9,9 @@ const btn1 = document.querySelector('.btn1');
 const btn2 = document.querySelector('.btn2');
 
 // DATI
+const codeCp = Math.ceil(Math.random() * 99999)
+const carriageNumber = Math.ceil(Math.random() * 8)
+let passengerId
 let km;
 const priceXKm = 0.21;
 let ticketPrice = km * priceXKm;
@@ -18,6 +21,7 @@ let discount;
 btn1.addEventListener('click',function(event){
   event.preventDefault();
   km = input2.value;
+  passengerId = input1.value
   ticketPrice = km * priceXKm;
 
   if(input3.value == 3){
@@ -33,6 +37,9 @@ btn1.addEventListener('click',function(event){
 
   output.classList.remove('d-none')
 
+  document.getElementById('idPassenger').innerHTML = passengerId;
+  document.getElementById('randomCarriage').innerHTML = carriageNumber;
+  document.getElementById('randomCp').innerHTML = codeCp;
   document.getElementById('outputPrice').innerHTML = ticketPrice.toFixed(2) + '€';
 })
 
@@ -41,16 +48,3 @@ btn1.addEventListener('click',function(event){
 
 
 
-// if(etaPasseggero < 18){
-//   message = 'I passeggeri minorenni hanno diritto ad uno sconto del 20%, il tuo biglietto ha un costo di: €'
-//   sconto = prezzoBiglietto * 0.2;
-// } else if(etaPasseggero > 65){
-//   message = 'I passeggeri over 65 hanno diritto ad uno sconto del 40%, il tuo biglietto ha un costo di: €'
-//   sconto = prezzoBiglietto * 0.4;
-// } else{
-//   message = 'Il tuo biglietto ha un costo di: €'
-// }
-// prezzoBiglietto = prezzoBiglietto - sconto ;
-// console.log(prezzoBiglietto);
-
-// document.getElementById('output').innerHTML = message + prezzoBiglietto.toFixed(2);
